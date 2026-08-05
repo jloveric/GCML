@@ -1,0 +1,18 @@
+seed: 53
+device: auto
+output_dir: ${hydra:runtime.output_dir}
+model_path: ${output_dir}/reward_random_graph.ptn
+image_dpi: 300
+image_format: png
+train: true
+n_nodes: 32
+batch_size: 1024
+state_dim: 1000
+epochs: 5000
+num_trajectories: 400
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}_abstract_graph
+  job:
+    chdir: false

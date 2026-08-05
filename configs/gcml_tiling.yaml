@@ -1,0 +1,18 @@
+seed: 123456
+device: auto
+output_dir: ${hydra:runtime.output_dir}
+dataset_path: ${hydra:runtime.cwd}/dataset/tiling_10x10_5obj.h5
+evaluation_dataset_path: ${hydra:runtime.cwd}/dataset/tiling_order_10x10_8obj.h5
+model_path: ${output_dir}/fig4_tiling.pth
+image_dpi: 300
+image_format: png
+train: false
+train_samples: 18000
+batch_size: 4096
+epochs: 100
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}_tiling
+  job:
+    chdir: false

@@ -1,0 +1,14 @@
+seed: 123456
+output_dir: ${hydra:runtime.output_dir}
+image_dpi: 300
+image_format: png
+n_steps: 50000
+n_cells: 1000
+n_plateau: 1000
+grid_resolution: 50
+
+hydra:
+  run:
+    dir: outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}_grid_cell
+  job:
+    chdir: false
